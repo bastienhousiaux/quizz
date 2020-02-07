@@ -1,0 +1,31 @@
+<?xml version="1.0"?>
+
+<persistence xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd%22%3E" version="2.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://xmlns.jcp.org/xml/ns/persistence">
+
+    <!-- Define persistence unit -->
+    <persistence-unit name="persistence_quizz_db2">
+
+
+        <properties>
+
+            <property name="hibernate.connection.driver_class" value="com.ibm.db2.jcc.DB2Driver"/>
+
+            <property name="hibernate.connection.url" value="jdbc:db2://localhost:50000/quizz"/>
+
+            <property name="hibernate.connection.username" value="db2admin"/>
+
+            <property name="hibernate.connection.password" value="Test1234="/>
+
+            <property name="show_sql" value="true"/>
+
+            <property name="hibernate.dialect" value="org.hibernate.dialect.DB2Dialect"/>
+
+            <property name="hibernate.current_session_context_class" value="thread"/>
+
+            <property name="hibernate.hbm2ddl.auto" value="create"/>
+
+        </properties>
+
+    </persistence-unit>
+
+</persistence>
