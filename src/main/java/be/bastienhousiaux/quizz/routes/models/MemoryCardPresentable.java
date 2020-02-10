@@ -10,6 +10,6 @@ import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 public class MemoryCardPresentable {
-    private int id;
+    private long id;
     private List<DataChunkPresentable> recto,verso;
 }

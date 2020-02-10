@@ -1,0 +1,13 @@
+<div *ngFor="let list of lists">
+    <h2>{{list.name}}</h2>
+    <div *ngFor="let card of list.cards">
+        recto:
+        <p *ngFor="let data of card.recto">
+            {{data.data}}
+        </p>
+        verso:
+        <p *ngFor="let data of card.verso">
+            {{data.data}}
+        </p>
+    </div>
+</div>
