@@ -1,13 +1,13 @@
-<div *ngFor="let list of lists">
-    <h2>{{list.name}}</h2>
-    <div *ngFor="let card of list.cards">
-        recto:
-        <p *ngFor="let data of card.recto">
-            {{data.data}}
-        </p>
-        verso:
-        <p *ngFor="let data of card.verso">
-            {{data.data}}
-        </p>
-    </div>
-</div>
+<nb-card *ngFor="let descriptor of lists">
+    <nb-card-header>
+        {{descriptor.name}}
+    </nb-card-header>
+    <nb-card-body>
+        edit|play|delete
+    </nb-card-body>
+</nb-card>
+
+<form [formGroup]="newList" (ngSubmit)="createList()">
+    <input nbInput type="text" formControlName="name" fullWidth>
+    <input nbButton type="submit" value="créer" [disabled]="newList.invalid">
+</form>

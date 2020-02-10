@@ -8,11 +8,11 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-@Entity
+@Entity(name="memory_card_list")
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemoryCardListEntity {
+public class MemoryCardListEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;

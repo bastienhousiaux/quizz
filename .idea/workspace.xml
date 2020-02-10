@@ -2,27 +2,25 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="30d333a5-041f-4078-b82e-5ed013c54e1d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListModel.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/services/MemoryCardListService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/entities/MemoryCardListEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/mappers/MemoryCardEntityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/mappers/MemoryCardListEntityMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/repositories/MemoryCardListRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/controllers/MemoryCardListController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/mappers/DataChunkPresentableMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/mappers/MemoryCardListPresentableMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/mappers/MemoryCardPresentableMapper.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/MemoryCardListPresentable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListInfoModel.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/mappers/MemoryCardListInfoEntityMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/mappers/MemoryCardListInfoPresentableMapper.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/MemoryCardListInfoPresentable.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/requests/MemoryCardListCreateRequest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardModel.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/controllers/MemoryCardController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/controllers/MemoryCardController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/DataChunkPresentable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/DataChunkPresentable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/MemoryCardPresentable.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/models/MemoryCardPresentable.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardModel.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/controllers/MemoryCardController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/controllers/MemoryCardController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/models/DataChunkPresentable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/models/DataChunkPresentable.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/models/MemoryCardPresentable.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/models/MemoryCardPresentable.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-front/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quizz-front/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-front/src/app/components/list-display/list-display.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/quizz-front/src/app/components/list-display/list-display.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-front/src/app/components/list-display/list-display.component.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quizz-front/src/app/components/list-display/list-display.component.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/quizz-front/src/app/services/memory-card-list.service.ts" beforeDir="false" afterPath="$PROJECT_DIR$/quizz-front/src/app/services/memory-card-list.service.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListModel.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListModel.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/services/MemoryCardListService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/businesslogic/services/MemoryCardListService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/entities/MemoryCardListEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/dal/entities/MemoryCardListEntity.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/controllers/MemoryCardListController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/be/bastienhousiaux/quizz/routes/controllers/MemoryCardListController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListModel.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/models/MemoryCardListModel.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/services/MemoryCardListService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/businesslogic/services/MemoryCardListService.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/dal/entities/MemoryCardListEntity.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/dal/entities/MemoryCardListEntity.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/controllers/MemoryCardListController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/be/bastienhousiaux/quizz/routes/controllers/MemoryCardListController.class" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -56,6 +54,9 @@
     </option>
   </component>
   <component name="ProjectId" id="1WhkgjvqBxtWydOprXKZmPmg8fA" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="PropertiesComponent">
     <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
@@ -125,6 +126,9 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/quizz$Main.ic" NAME="Main Coverage Results" MODIFIED="1579616636011" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">

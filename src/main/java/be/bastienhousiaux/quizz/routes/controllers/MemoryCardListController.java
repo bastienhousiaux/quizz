@@ -1,15 +1,20 @@
 package be.bastienhousiaux.quizz.routes.controllers;
 
 import be.bastienhousiaux.quizz.businesslogic.services.MemoryCardListService;
+import be.bastienhousiaux.quizz.routes.mappers.MemoryCardListInfoPresentableMapper;
 import be.bastienhousiaux.quizz.routes.mappers.MemoryCardListPresentableMapper;
 import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
+import be.bastienhousiaux.quizz.routes.models.MemoryCardListInfoPresentable;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardListPresentable;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
+import be.bastienhousiaux.quizz.routes.models.requests.MemoryCardListCreateRequest;
 import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 
 @RestController
@@ -21,6 +26,8 @@ public class MemoryCardListController {
     private MemoryCardListService memoryCardListService;
     @Autowired
     private MemoryCardListPresentableMapper memoryCardListPresentableMapper;
+    @Autowired
+    private MemoryCardListInfoPresentableMapper memoryCardListInfoPresentableMapper;
 
     @GetMapping("/{id}")
     public MemoryCardListPresentable getMemoryCardListById(@RequestParam long id){
@@ -29,6 +36,44 @@ public class MemoryCardListController {
                 memoryCardListService.getMemoryCardListById(id)
         );
     }
+
+    @GetMapping("")
+    public List<MemoryCardListInfoPresentable> getDescriptorList(){
+
+        List<MemoryCardListInfoPresentable> descriptors=new ArrayList<>();
+        this.memoryCardListService.getMemoryCardListDescriptors().forEach(
+                memoryCardListInfoModel -> {
+                    descriptors.add(
+                            memoryCardListInfoPresentableMapper.toSource(memoryCardListInfoModel)
+                    );
+                }
+        );
+        System.out.println(descriptors);
+        return descriptors;
+//        return this.memoryCardListService.getMemoryCardListDescriptors().stream().map(
+//                memoryCardListInfoModel -> memoryCardListInfoPresentableMapper.toSource(memoryCardListInfoModel)
+//        ).collect(Collectors.toList());
+    }
+
+    @PostMapping("")
+    public MemoryCardListPresentable createCardList(@RequestBody() MemoryCardListCreateRequest request){
+        return memoryCardListPresentableMapper.toSource(
+                this.memoryCardListService.createMemoryCardList(request.getName())
+        );
+    }
+
+    @PostMapping("/{id}/memorycards")
+    public MemoryCardPresentable addMemoryCard(){
+        //TODO: implémenter
+        return null;
+    }
+
+    @PatchMapping("/{id}/name")
+    public void changeName(String newName){
+        //TODO : implémenter
+    }
+
+
 
     @GetMapping("/test")
     public MemoryCardListPresentable createTestData(){
