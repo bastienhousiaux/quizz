@@ -3,7 +3,7 @@
         {{descriptor.name}}
     </nb-card-header>
     <nb-card-body>
-        edit|play|delete
+        edit|play|<button nbButton (click)="deleteList(descriptor)"><nb-icon icon="trash"></nb-icon></button>
     </nb-card-body>
 </nb-card>
 

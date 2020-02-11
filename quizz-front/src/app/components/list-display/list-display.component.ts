@@ -35,4 +35,8 @@ export class ListDisplayComponent implements OnInit {
     this.memoryCardListService.createList(this.newList.value);
   }
 
+  deleteList(descriptor:MemoryCardListDescriptorModel){
+    this.memoryCardListService.deleteList(descriptor);
+  }
+
 }

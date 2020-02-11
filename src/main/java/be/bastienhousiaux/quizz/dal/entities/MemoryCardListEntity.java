@@ -12,12 +12,9 @@ import java.util.List;
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
-public class MemoryCardListEntity{
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+@Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
+public class MemoryCardListEntity extends MemoryCardListInfoEntity{
 
-    private String name;
     @OneToMany
     private List<MemoryCardEntity> cards=new ArrayList<>();
 }

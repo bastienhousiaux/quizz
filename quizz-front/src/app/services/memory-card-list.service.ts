@@ -43,4 +43,10 @@ export class MemoryCardListService {
       x=>this._listsDecriptors.next(x)
     );
   }
+
+  deleteList(memoryCardList:MemoryCardListDescriptorModel){
+    this.httpClient.delete<never>(environment.apiUrl+"/lists/"+memoryCardList.id).subscribe(
+      x=>this.getAllDescriptors()
+    );
+  }
 }

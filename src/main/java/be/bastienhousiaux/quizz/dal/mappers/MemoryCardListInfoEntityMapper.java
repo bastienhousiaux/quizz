@@ -8,18 +8,22 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemoryCardListInfoEntityMapper implements Mapper<MemoryCardListEntity, MemoryCardListInfoModel> {
     @Override
-    public MemoryCardListEntity toSource(MemoryCardListInfoModel memoryCardListInfoModel) {
-        MemoryCardListEntity memoryCardListInfoEntity=new MemoryCardListEntity();
-        memoryCardListInfoEntity.setId(memoryCardListInfoModel.getId());
-        memoryCardListInfoEntity.setName(memoryCardListInfoModel.getName());
-        return memoryCardListInfoEntity;
+    public MemoryCardListInfoModel map(MemoryCardListEntity toMap) {
+        return null;
     }
-
-    @Override
-    public MemoryCardListInfoModel toDistant(MemoryCardListEntity memoryCardListInfoEntity) {
-        MemoryCardListInfoModel memoryCardListInfoModel=new MemoryCardListInfoModel();
-        memoryCardListInfoModel.setId(memoryCardListInfoEntity.getId());
-        memoryCardListInfoModel.setName(memoryCardListInfoEntity.getName());
-        return memoryCardListInfoModel;
-    }
+//    @Override
+//    public MemoryCardListEntity toSource(MemoryCardListInfoModel memoryCardListInfoModel) {
+//        MemoryCardListEntity memoryCardListInfoEntity=new MemoryCardListEntity();
+//        memoryCardListInfoEntity.setId(memoryCardListInfoModel.getId());
+//        memoryCardListInfoEntity.setName(memoryCardListInfoModel.getName());
+//        return memoryCardListInfoEntity;
+//    }
+//
+//    @Override
+//    public MemoryCardListInfoModel toDistant(MemoryCardListEntity memoryCardListInfoEntity) {
+//        MemoryCardListInfoModel memoryCardListInfoModel=new MemoryCardListInfoModel();
+//        memoryCardListInfoModel.setId(memoryCardListInfoEntity.getId());
+//        memoryCardListInfoModel.setName(memoryCardListInfoEntity.getName());
+//        return memoryCardListInfoModel;
+//    }
 }

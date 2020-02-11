@@ -4,7 +4,7 @@ import { NgModule } from '@angular/core';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NbThemeModule, NbLayoutModule, NbInputModule, NbButtonModule, NbCardModule } from '@nebular/theme';
+import { NbThemeModule, NbLayoutModule, NbInputModule, NbButtonModule, NbCardModule, NbIconModule } from '@nebular/theme';
 import { NbEvaIconsModule } from '@nebular/eva-icons';
 import { ListDisplayComponent } from './components/list-display/list-display.component';
 import { ListPlayComponent } from './components/list-play/list-play.component';
@@ -30,7 +30,8 @@ import { ReactiveFormsModule } from '@angular/forms';
     ReactiveFormsModule,
     NbInputModule,
     NbButtonModule,
-    NbCardModule
+    NbCardModule,
+    NbIconModule
   ],
   providers: [],
   bootstrap: [AppComponent]
