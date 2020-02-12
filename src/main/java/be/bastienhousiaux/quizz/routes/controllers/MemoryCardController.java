@@ -1,14 +1,8 @@
 package be.bastienhousiaux.quizz.routes.controllers;
 
 
-import be.bastienhousiaux.quizz.businesslogic.models.TypedDataModel;
-import be.bastienhousiaux.quizz.businesslogic.services.routers_services.TypedDataService;
-import be.bastienhousiaux.quizz.dal.daos.businesslogic_daos.TypedDataMappableDAO;
-import be.bastienhousiaux.quizz.dal.entities.MemoryCardEntity;
-import be.bastienhousiaux.quizz.dal.repositories.MemoryCardRepository;
-import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
+import be.bastienhousiaux.quizz.businesslogic.services.routers_services.MemoryCardService;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
-import lombok.val;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,28 +14,26 @@ import java.util.List;
 public class MemoryCardController {
 
     @Autowired
-    private MemoryCardRepository memoryCardRepository;
+    private MemoryCardService memoryCardService;
 
 
-    @Autowired
-    private TypedDataService typedDataService;
-
-    @GetMapping("/test")
-    public List<DataChunkPresentable> getTest(){
-        return typedDataService.getAll();
+    @GetMapping("")
+    public List<MemoryCardPresentable> getAll(){
+        return this.memoryCardService.getAll();
     }
 
+    @GetMapping("/{id}")
+    public MemoryCardPresentable getById(@PathVariable("id") long id){
+        return this.memoryCardService.getById(id);
+    }
 
+    @PostMapping("")
+    public MemoryCardPresentable create(){
+        return this.memoryCardService.create();
+    }
 
-//    @GetMapping("")
-//    public List<MemoryCardEntity> getAllMemoryCards(){
-//        List<MemoryCardEntity> memoryCards=new ArrayList<>();
-//         memoryCardRepository.findAll().forEach(memoryCards::add);
-//         return memoryCards;
-//    }
-//
-//    @GetMapping("/hello")
-//    public String createMemoryCards(){
-//        return "hello world";
-//    }
+    @DeleteMapping("/{id}")
+    public void deleteById(@PathVariable("id") long id){
+        this.memoryCardService.deleteById(id);
+    }
 }

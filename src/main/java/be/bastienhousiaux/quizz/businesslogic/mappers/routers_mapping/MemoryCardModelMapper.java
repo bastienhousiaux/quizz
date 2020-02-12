@@ -4,9 +4,11 @@ import be.bastienhousiaux.quizz.businesslogic.mappers.AbstractMemoryCardModelMap
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.stream.Collectors;
 
+@Service
 public class MemoryCardModelMapper extends AbstractMemoryCardModelMapper {
 
     @Autowired

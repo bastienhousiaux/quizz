@@ -40,7 +40,10 @@ public abstract class AbstractMappableDAO<EntityType,OutType> extends AbstractDA
     CREATE
     */
     public OutType create(){
-        return this.mapper.map(this.returnsNewEntity());
+        EntityType entity=this.returnsNewEntity();
+        this.repository.save(entity);
+        OutType mappedEntity=this.mapper.map(entity);
+        return mappedEntity;
     }
 
     public abstract EntityType returnsNewEntity();

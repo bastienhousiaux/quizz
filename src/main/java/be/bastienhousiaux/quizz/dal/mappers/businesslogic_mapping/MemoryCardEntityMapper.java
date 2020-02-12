@@ -20,7 +20,8 @@ public class MemoryCardEntityMapper extends AbstractMemoryCardEntityMapper<Memor
     @Override
     public MemoryCardModel map(MemoryCardEntity toMap) {
         MemoryCardModel memoryCardModel=new MemoryCardModel();
-        memoryCardModel.setId(toMap.getId());
+        if(toMap.getId()!=null)
+            memoryCardModel.setId(toMap.getId());
 
         memoryCardModel.setRecto(
                 mapDatas(

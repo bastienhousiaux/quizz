@@ -6,7 +6,9 @@ import be.bastienhousiaux.quizz.dal.entities.MemoryCardEntity;
 import be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping.MemoryCardEntityMapper;
 import be.bastienhousiaux.quizz.dal.repositories.MemoryCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class MemoryCardMappableDAO extends AbstractMappableDAO<MemoryCardEntity, MemoryCardModel> {
     @Autowired
     public MemoryCardMappableDAO(MemoryCardEntityMapper mapper, MemoryCardRepository repository) {

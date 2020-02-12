@@ -31,4 +31,18 @@ public abstract class AbstractMappableService<LayerType,OutType> extends Abstrac
         return result;
     }
 
+    public OutType getById(long id){
+        return this.mapper.map(this.dao.getOne(id));
+    }
+
+    public OutType create(){
+        return this.mapper.map(
+            this.dao.create()
+        );
+    }
+
+    public void deleteById(Long id){
+        this.dao.deleteById(id);
+    }
+
 }
