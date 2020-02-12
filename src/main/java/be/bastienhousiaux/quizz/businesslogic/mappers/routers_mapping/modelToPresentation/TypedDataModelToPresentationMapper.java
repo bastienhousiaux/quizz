@@ -6,7 +6,7 @@ import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TypedDataModelMapper extends AbstractTypedDataModelMapper<DataChunkPresentable> {
+public class TypedDataModelToPresentationMapper extends AbstractTypedDataModelMapper<DataChunkPresentable> {
     @Override
     public DataChunkPresentable map(TypedDataModel toMap) {
         DataChunkPresentable dataChunkPresentable=new DataChunkPresentable();
