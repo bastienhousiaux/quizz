@@ -1,4 +1,4 @@
-package be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping;
+package be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping.entityToModel;
 
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardListModel;
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MemoryCardListEntityMapper extends AbstractMemoryCardListMapper<MemoryCardListModel> {
+public class MemoryCardListEntityToModelMapper extends AbstractMemoryCardListMapper<MemoryCardListModel> {
 
     @Autowired
-    private MemoryCardEntityMapper memoryCardEntityMapper;
+    private MemoryCardEntityToModelMapper memoryCardEntityMapper;
 
     @Override
     public MemoryCardListModel map(MemoryCardListEntity toMap) {
@@ -45,41 +45,5 @@ public class MemoryCardListEntityMapper extends AbstractMemoryCardListMapper<Mem
 
         return memoryCardModels;
     }
-
-//    @Override
-//    public MemoryCardListEntity toSource(MemoryCardListModel memoryCardListModel) {
-//        MemoryCardListEntity memoryCardListEntity=new MemoryCardListEntity();
-//        memoryCardListEntity.setId(memoryCardListModel.getId());
-//        memoryCardListEntity.setName(memoryCardListEntity.getName());
-//
-//        memoryCardListEntity.setCards(
-//                this.memoryCardListToSource(
-//                        memoryCardListModel.getCards()
-//                )
-//        );
-//
-//        return memoryCardListEntity;
-//    }
-//
-//    public List<MemoryCardEntity> memoryCardListToSource(List<MemoryCardModel> memoryCardModels){
-//        List<MemoryCardEntity> memoryCardEntities=new ArrayList<>();
-//
-//        memoryCardModels.forEach(
-//            memoryCardModel -> {
-//                memoryCardEntities.add(
-//                        memoryCardEntityMapper.toSource(memoryCardModel)
-//                );
-//            }
-//        );
-//
-//        return memoryCardEntities;
-//    }
-//
-//    @Override
-//    public MemoryCardListModel toDistant(MemoryCardListEntity memoryCardListEntity) {
-//
-//    }
-
-
 }
 

@@ -1,4 +1,4 @@
-package be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping;
+package be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping.entityToModel;
 
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
 import be.bastienhousiaux.quizz.businesslogic.models.TypedDataModel;
@@ -12,10 +12,10 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MemoryCardEntityMapper extends AbstractMemoryCardEntityMapper<MemoryCardModel> {
+public class MemoryCardEntityToModelMapper extends AbstractMemoryCardEntityMapper<MemoryCardModel> {
 
     @Autowired
-    private TypedDataEntityMapper typedDataEntityMapper;
+    private TypedDataEntityToModelMapper typedDataEntityMapper;
 
     @Override
     public MemoryCardModel map(MemoryCardEntity toMap) {

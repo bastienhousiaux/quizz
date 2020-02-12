@@ -1,4 +1,4 @@
-package be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping;
+package be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping.modelToPresentation;
 
 import be.bastienhousiaux.quizz.businesslogic.mappers.AbstractMemoryCardModelMapper;
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;

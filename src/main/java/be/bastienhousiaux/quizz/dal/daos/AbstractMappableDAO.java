@@ -1,20 +1,17 @@
 package be.bastienhousiaux.quizz.dal.daos;
 
 import be.bastienhousiaux.quizz.utils.mapping.Mapper;
-import lombok.AllArgsConstructor;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 import org.springframework.data.repository.CrudRepository;
 
 import java.util.ArrayList;
 import java.util.List;
 
-@Data
 @NoArgsConstructor
 @AllArgsConstructor
 public abstract class AbstractMappableDAO<EntityType,OutType> extends AbstractDAO<EntityType,OutType> {
-    private Mapper<EntityType,OutType> mapper;
-    private CrudRepository<EntityType,Long> repository;
+    @Getter(value = AccessLevel.PROTECTED) private Mapper<EntityType,OutType> mapper;
+    @Getter(value = AccessLevel.PROTECTED) private CrudRepository<EntityType,Long> repository;
 
     /*
     READ
