@@ -8,4 +8,6 @@ public class AbstractMemoryCardListMappableService<OutType> extends AbstractMapp
     public AbstractMemoryCardListMappableService(Mapper<MemoryCardListModel, OutType> mapper, AbstractMappableDAO<?, MemoryCardListModel> dao) {
         super(mapper, dao);
     }
+
+    //todo : specific methods should be here but typing between service and daos are not designed the same
 }
