@@ -1,12 +1,12 @@
-package be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping.modelToPresentable;
+package be.bastienhousiaux.quizz.businesslogic.mappers.to.presentable;
 
-import be.bastienhousiaux.quizz.businesslogic.mappers.AbstractTypedDataModelMapper;
+import be.bastienhousiaux.quizz.businesslogic.mappers.to.AbstractTypedDataModelToMapper;
 import be.bastienhousiaux.quizz.businesslogic.models.TypedDataModel;
 import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
 import org.springframework.stereotype.Service;
 
 @Service
-public class TypedDataModelToPresentableMapper extends AbstractTypedDataModelMapper<DataChunkPresentable> {
+public class TypedDataModelToPresentableMapper extends AbstractTypedDataModelToMapper<DataChunkPresentable> {
     @Override
     public DataChunkPresentable map(TypedDataModel toMap) {
         DataChunkPresentable dataChunkPresentable=new DataChunkPresentable();

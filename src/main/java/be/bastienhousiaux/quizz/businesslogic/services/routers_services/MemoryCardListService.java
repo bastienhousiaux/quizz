@@ -1,6 +1,6 @@
 package be.bastienhousiaux.quizz.businesslogic.services.routers_services;
 
-import be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping.modelToPresentable.MemoryCardListModelToPresentatableMapper;
+import be.bastienhousiaux.quizz.businesslogic.mappers.to.presentable.MemoryCardListModelToPresentatableMapper;
 import be.bastienhousiaux.quizz.businesslogic.services.AbstractMemoryCardListMappableService;
 import be.bastienhousiaux.quizz.dal.daos.businesslogic_daos.MemoryCardListMappableDAO;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardListPresentable;

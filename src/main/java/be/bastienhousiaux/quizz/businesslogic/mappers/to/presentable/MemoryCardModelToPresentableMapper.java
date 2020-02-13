@@ -1,6 +1,6 @@
-package be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping.modelToPresentable;
+package be.bastienhousiaux.quizz.businesslogic.mappers.to.presentable;
 
-import be.bastienhousiaux.quizz.businesslogic.mappers.AbstractMemoryCardModelMapper;
+import be.bastienhousiaux.quizz.businesslogic.mappers.to.AbstractMemoryCardModelToMapper;
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
-public class MemoryCardModelToPresentableMapper extends AbstractMemoryCardModelMapper<MemoryCardPresentable> {
+public class MemoryCardModelToPresentableMapper extends AbstractMemoryCardModelToMapper<MemoryCardPresentable> {
 
     @Autowired
     private TypedDataModelToPresentableMapper typedDataMapper;

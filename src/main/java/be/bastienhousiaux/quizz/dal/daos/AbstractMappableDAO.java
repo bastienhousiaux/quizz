@@ -4,6 +4,7 @@ import be.bastienhousiaux.quizz.utils.mapping.Mapper;
 import lombok.*;
 import org.springframework.data.repository.CrudRepository;
 
+import java.lang.reflect.ParameterizedType;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -37,6 +38,8 @@ public abstract class AbstractMappableDAO<EntityType,OutType> extends AbstractDA
     CREATE
     */
     public OutType create(){
+//        EntityType e;
+//        EntityType entity=((Class)((ParameterizedType)));
         EntityType entity=this.returnsNewEntity();
         this.repository.save(entity);
         OutType mappedEntity=this.mapper.map(entity);

@@ -3,7 +3,7 @@ package be.bastienhousiaux.quizz.dal.daos.businesslogic_daos;
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
 import be.bastienhousiaux.quizz.dal.daos.AbstractMappableDAO;
 import be.bastienhousiaux.quizz.dal.entities.MemoryCardEntity;
-import be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping.entityToModel.MemoryCardEntityToModelMapper;
+import be.bastienhousiaux.quizz.dal.mappers.to.model.MemoryCardEntityToModelMapper;
 import be.bastienhousiaux.quizz.dal.repositories.MemoryCardRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

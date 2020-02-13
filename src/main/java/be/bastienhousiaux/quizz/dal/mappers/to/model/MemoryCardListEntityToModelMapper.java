@@ -1,10 +1,10 @@
-package be.bastienhousiaux.quizz.dal.mappers.businesslogic_mapping.entityToModel;
+package be.bastienhousiaux.quizz.dal.mappers.to.model;
 
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardListModel;
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardModel;
 import be.bastienhousiaux.quizz.dal.entities.MemoryCardEntity;
 import be.bastienhousiaux.quizz.dal.entities.MemoryCardListEntity;
-import be.bastienhousiaux.quizz.dal.mappers.AbstractMemoryCardListMapper;
+import be.bastienhousiaux.quizz.dal.mappers.to.AbstractMemoryCardListToMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -12,7 +12,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Service
-public class MemoryCardListEntityToModelMapper extends AbstractMemoryCardListMapper<MemoryCardListModel> {
+public class MemoryCardListEntityToModelMapper extends AbstractMemoryCardListToMapper<MemoryCardListModel> {
 
     @Autowired
     private MemoryCardEntityToModelMapper memoryCardEntityMapper;

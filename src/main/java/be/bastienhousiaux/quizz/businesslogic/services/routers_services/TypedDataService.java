@@ -1,6 +1,6 @@
 package be.bastienhousiaux.quizz.businesslogic.services.routers_services;
 
-import be.bastienhousiaux.quizz.businesslogic.mappers.routers_mapping.modelToPresentable.TypedDataModelToPresentableMapper;
+import be.bastienhousiaux.quizz.businesslogic.mappers.to.presentable.TypedDataModelToPresentableMapper;
 import be.bastienhousiaux.quizz.businesslogic.services.AbstractTypedDataMappableService;
 import be.bastienhousiaux.quizz.dal.daos.businesslogic_daos.TypedDataMappableDAO;
 import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
