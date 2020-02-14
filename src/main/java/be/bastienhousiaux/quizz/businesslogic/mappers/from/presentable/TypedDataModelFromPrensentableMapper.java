@@ -10,6 +10,7 @@ import org.springframework.stereotype.Service;
 public class TypedDataModelFromPrensentableMapper extends AbstractTypedDataModelFromMapper<DataChunkPresentable> {
     @Override
     public TypedDataModel map(DataChunkPresentable toMap) {
+        if(toMap==null)return null;
         TypedDataModel typedDataModel=new TypedDataModel();
         typedDataModel.setId(toMap.getId());
         typedDataModel.setData(toMap.getData());

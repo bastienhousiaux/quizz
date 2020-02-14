@@ -9,6 +9,7 @@ import org.springframework.stereotype.Service;
 public class TypedDataEntityFromModelMapper extends AbstractTypedDataEntityFromMapper<TypedDataModel> {
     @Override
     public TypedDataEntity map(TypedDataModel toMap) {
+        if(toMap==null)return null;
         TypedDataEntity typedDataEntity=new TypedDataEntity();
         typedDataEntity.setId(toMap.getId());
         typedDataEntity.setData(toMap.getData());

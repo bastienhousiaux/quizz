@@ -15,6 +15,7 @@ public class MemoryCardListEntityFromModelMapper extends AbstractMemoryCardListE
 
     @Override
     public MemoryCardListEntity map(MemoryCardListModel toMap) {
+        if(toMap==null)return null;
         MemoryCardListEntity memoryCardListEntity=new MemoryCardListEntity();
         memoryCardListEntity.setId(toMap.getId());
         memoryCardListEntity.setName(toMap.getName());

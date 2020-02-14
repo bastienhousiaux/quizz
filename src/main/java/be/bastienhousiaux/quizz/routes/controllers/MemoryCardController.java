@@ -2,6 +2,7 @@ package be.bastienhousiaux.quizz.routes.controllers;
 
 
 import be.bastienhousiaux.quizz.businesslogic.services.routers_services.MemoryCardService;
+import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -30,6 +31,12 @@ public class MemoryCardController {
     @PostMapping("")
     public MemoryCardPresentable create(){
         return this.memoryCardService.create();
+    }
+
+    @PostMapping("{id}/{face}/data")
+    public DataChunkPresentable addDataToMemoryCard(@PathVariable("id") long id,
+                                                    @PathVariable("face") String face){
+        return this.memoryCardService.createDataInCard(id,face);
     }
 
     @DeleteMapping("/{id}")

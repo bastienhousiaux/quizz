@@ -1,17 +1,26 @@
 package be.bastienhousiaux.quizz.routes.controllers;
 
+import be.bastienhousiaux.quizz.businesslogic.services.routers_services.TypedDataService;
 import be.bastienhousiaux.quizz.routes.models.DataChunkPresentable;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
 @RestController
 @CrossOrigin
-@RequestMapping("/data")
+@RequestMapping("/datas")
 public class TypedDataController {
+    @Autowired
+    private TypedDataService typedDataService;
 
+    @PatchMapping("/{id}/type")
+    public void changeDataChunkType(@PathVariable("id") long id,@RequestParam("type") String type){
+        this.typedDataService.changeTypedDataType(id,type);
+    }
 
+    @PatchMapping("/{id}/data")
+    public void changeDataChunkData(@PathVariable("id") long id,@RequestParam("data") String data){
+        this.typedDataService.changeTypedDataData(id,data);
+    }
 }

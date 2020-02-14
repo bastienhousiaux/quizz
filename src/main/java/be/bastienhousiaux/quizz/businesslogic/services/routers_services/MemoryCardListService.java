@@ -12,16 +12,9 @@ import org.springframework.stereotype.Service;
 @Service
 public class MemoryCardListService extends AbstractMemoryCardListMappableService<MemoryCardListPresentable> {
     @Autowired
-    private MemoryCardModelToPresentableMapper memoryCardModelToPresentableMapper;
-
-
-    @Autowired
     public MemoryCardListService(MemoryCardListModelToPresentatableMapper mapper, MemoryCardListMappableDAO dao) {
         super(mapper, dao);
     }
 
-    public MemoryCardPresentable addCardToQuizz(long quizzId){
-        return memoryCardModelToPresentableMapper.map(((MemoryCardListMappableDAO)getDao()).createCardInQuizz(quizzId));
-    }
 
 }

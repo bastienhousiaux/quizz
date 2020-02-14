@@ -16,6 +16,7 @@ public class MemoryCardModelToPresentableMapper extends AbstractMemoryCardModelT
 
     @Override
     public MemoryCardPresentable map(MemoryCardModel toMap) {
+        if(toMap==null)return null;
         MemoryCardPresentable memoryCardPresentable=new MemoryCardPresentable();
         memoryCardPresentable.setId(toMap.getId());
         memoryCardPresentable.setRecto(

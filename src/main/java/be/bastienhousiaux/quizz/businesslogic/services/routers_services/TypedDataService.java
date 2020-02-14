@@ -13,4 +13,16 @@ public class TypedDataService extends AbstractTypedDataMappableService<DataChunk
     public TypedDataService(TypedDataModelToPresentableMapper mapper, TypedDataMappableDAO dao) {
         super(mapper, dao);
     }
+
+    public TypedDataMappableDAO getDao(){
+        return (TypedDataMappableDAO)super.getDao();
+    }
+
+    public void changeTypedDataType(long id,String type){
+        this.getDao().changeTypedDataType(id,type);
+    }
+
+    public void changeTypedDataData(long id,String data){
+        this.getDao().changeData(id,data);
+    }
 }

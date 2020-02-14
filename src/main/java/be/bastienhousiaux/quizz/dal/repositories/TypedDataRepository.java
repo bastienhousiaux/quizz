@@ -6,4 +6,5 @@ import org.springframework.stereotype.Repository;
 
 @Repository
 public interface TypedDataRepository extends CrudRepository<TypedDataEntity,Long> {
+    
 }
