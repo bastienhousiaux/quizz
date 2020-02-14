@@ -1,0 +1,8 @@
+<h1>{{list.name || "liste sans titre"}}</h1>
+<button nbButton (click)="goBack()">retour</button>
+<div *ngFor="let memoryCard of list.cards">
+    <app-memory-card-edit [memoryCard]="memoryCard"></app-memory-card-edit>
+</div>
+<div>
+    <button nbButton fullWidth>ajouter</button>
+</div>

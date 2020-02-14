@@ -1,0 +1,6 @@
+<nb-card width="50vw">
+    <app-data-chunk-edit *ngFor="let dataChunk of memoryCard.recto" [dataChunk]="dataChunk"></app-data-chunk-edit>
+</nb-card>
+<nb-card  width="50vw">
+    <app-data-chunk-edit *ngFor="let dataChunk of memoryCard.verso" [dataChunk]="dataChunk"></app-data-chunk-edit>
+</nb-card>
