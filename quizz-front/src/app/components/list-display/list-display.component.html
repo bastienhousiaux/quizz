@@ -1,9 +1,9 @@
-<nb-card *ngFor="let descriptor of lists">
+<nb-card *ngFor="let quizz of lists">
     <nb-card-header>
-        {{descriptor.name}}
+        {{quizz.name || "unnamed quizz"}}
     </nb-card-header>
     <nb-card-body>
-        edit|play|<button nbButton (click)="deleteList(descriptor)"><nb-icon icon="trash"></nb-icon></button>
+        <button nbButton (click)="editQuizz(quizz)"><nb-icon icon="edit"></nb-icon></button>|play|<button nbButton (click)="deleteList(quizz)"><nb-icon icon="trash"></nb-icon></button>
     </nb-card-body>
 </nb-card>
 

@@ -4,6 +4,7 @@ import be.bastienhousiaux.quizz.businesslogic.mappers.to.presentable.MemoryCardM
 import be.bastienhousiaux.quizz.businesslogic.models.MemoryCardListModel;
 import be.bastienhousiaux.quizz.dal.daos.AbstractMappableDAO;
 import be.bastienhousiaux.quizz.dal.daos.businesslogic_daos.MemoryCardListMappableDAO;
+import be.bastienhousiaux.quizz.routes.models.MemoryCardListPresentable;
 import be.bastienhousiaux.quizz.routes.models.MemoryCardPresentable;
 import be.bastienhousiaux.quizz.utils.mapping.Mapper;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,4 +25,6 @@ public class AbstractMemoryCardListMappableService<OutType> extends AbstractMapp
     public MemoryCardPresentable addCardToQuizz(long quizzId){
         return memoryCardModelToPresentableMapper.map((getDao()).createCardInQuizz(quizzId));
     }
+
+
 }

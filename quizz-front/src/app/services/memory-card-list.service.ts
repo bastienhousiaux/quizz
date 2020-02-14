@@ -1,24 +1,24 @@
-import { Injectable } from '@angular/core';
+import { Injectable, Optional } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { MemoryCardListModel } from '../models/MemoryCardListModel';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
-import { MemoryCardListDescriptorModel } from '../models/MemoryCardListDescriptorModel';
+import { MemoryCardModel } from '../models/MemoryCardModel';
 
 @Injectable({
   providedIn: 'root'
 })
 export class MemoryCardListService {
 
-  private _listsDecriptors:BehaviorSubject<MemoryCardListDescriptorModel[]>;
+  private _listsDecriptors:BehaviorSubject<MemoryCardListModel[]>;
 
 
   constructor(public httpClient:HttpClient) {
-    this._listsDecriptors=new BehaviorSubject<MemoryCardListDescriptorModel[]>([]);
+    this._listsDecriptors=new BehaviorSubject<MemoryCardListModel[]>([]);
     this.getAllDescriptors();
    }
 
-   public get listDescriptors():Observable<MemoryCardListDescriptorModel[]>{
+   public get listDescriptors():Observable<MemoryCardListModel[]>{
       return this._listsDecriptors.asObservable();
    }
 
@@ -33,20 +33,32 @@ export class MemoryCardListService {
   }
 
   createList(memoryCardList:MemoryCardListModel){
-    this.httpClient.post<MemoryCardListModel>(environment.apiUrl+"/lists",{
-      "name":memoryCardList.name
-    }).subscribe(x=>{this.getAllDescriptors()});
+    this.httpClient.post<MemoryCardListModel>(environment.apiUrl+"/lists"+(memoryCardList.name?"?name="+memoryCardList.name:""),{}).subscribe(x=>{this.getAllDescriptors()});
   }
 
   getAllDescriptors(){
-    this.httpClient.get<MemoryCardListDescriptorModel[]>(environment.apiUrl+"/lists").subscribe(
+    this.httpClient.get<MemoryCardListModel[]>(environment.apiUrl+"/lists").subscribe(
       x=>this._listsDecriptors.next(x)
     );
   }
 
-  deleteList(memoryCardList:MemoryCardListDescriptorModel){
+  deleteList(memoryCardList:MemoryCardListModel){
     this.httpClient.delete<never>(environment.apiUrl+"/lists/"+memoryCardList.id).subscribe(
       x=>this.getAllDescriptors()
     );
+  }
+
+  getListById(id:number):MemoryCardListModel{
+      for(let i=0;i<this._listsDecriptors.value.length;i++){
+        if(this._listsDecriptors.value[i].id==id)return this._listsDecriptors.value[i];
+      }
+      return null;
+  }
+
+  createCard(quizzId:number):Observable<MemoryCardModel>{
+    console.log(quizzId);
+    return this.httpClient.post<MemoryCardModel>(environment.apiUrl+"/lists/"+quizzId+"/cards",{},{headers:{
+      "Content-type":"application/json"
+    }});
   }
 }

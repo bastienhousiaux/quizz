@@ -26,12 +26,13 @@ public class MemoryCardListController {
     }
 
     @PostMapping("")
-    public MemoryCardListPresentable create(){
+    public MemoryCardListPresentable create(@RequestParam(value="name",required = false) String name){
+        if(name!=null) return this.memoryCardListService.create(name);
         return this.memoryCardListService.create();
     }
 
-    @PostMapping("/cards")
-    public MemoryCardPresentable createCardInQuizz(@RequestParam("idQuizz") long idQuizz){
+    @PostMapping("/{idQuizz}/cards")
+    public MemoryCardPresentable createCardInQuizz(@PathVariable("idQuizz") long idQuizz){
         return memoryCardListService.addCardToQuizz(idQuizz);
     }
 

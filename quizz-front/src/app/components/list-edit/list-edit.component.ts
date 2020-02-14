@@ -14,15 +14,21 @@ export class ListEditComponent implements OnInit {
 
   constructor(private route:ActivatedRoute,
     private memoryCardListService:MemoryCardListService,
-    private router:Router) { }
+    private router:Router) {}
 
   ngOnInit(): void {
-    this.list=this.memoryCardListService.getListById(parseInt(this.route.snapshot.paramMap.get("id")));
+    this.list=this.memoryCardListService.getListById(parseInt(this.route.snapshot.paramMap.get("id"))); 
     console.log(this.list);
   }
 
   goBack(){
     this.router.navigateByUrl("/lists");
+  }
+
+  addCard(){
+    this.memoryCardListService.createCard(this.list.id).subscribe(
+      data=>{this.list.cards.push(data)}
+    );
   }
 
 }

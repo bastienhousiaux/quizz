@@ -1,9 +1,8 @@
 import { Component, OnInit } from '@angular/core';
 import { MemoryCardListService } from 'src/app/services/memory-card-list.service';
-import { MemoryCardListModel } from 'src/app/models/MemoryCardListModel';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { MemoryCardListDescriptorModel } from 'src/app/models/MemoryCardListDescriptorModel';
-
+import { MemoryCardListModel } from 'src/app/models/MemoryCardListModel';
+import { Router } from '@angular/router';
 @Component({
   selector: 'app-list-display',
   templateUrl: './list-display.component.html',
@@ -11,10 +10,10 @@ import { MemoryCardListDescriptorModel } from 'src/app/models/MemoryCardListDesc
 })
 export class ListDisplayComponent implements OnInit {
 
-  lists:MemoryCardListDescriptorModel[];
+  lists:MemoryCardListModel[];
   newList:FormGroup;
 
-  constructor(private memoryCardListService:MemoryCardListService) { }
+  constructor(private memoryCardListService:MemoryCardListService,private router:Router) { }
 
   ngOnInit(): void {
     this.newList=new FormGroup({
@@ -29,14 +28,19 @@ export class ListDisplayComponent implements OnInit {
         this.lists=data;
       }
     )
+    this.memoryCardListService.getAllDescriptors();
   }
 
   createList(){
     this.memoryCardListService.createList(this.newList.value);
   }
 
-  deleteList(descriptor:MemoryCardListDescriptorModel){
+  deleteList(descriptor:MemoryCardListModel){
     this.memoryCardListService.deleteList(descriptor);
+  }
+
+  editQuizz(quizz:MemoryCardListModel){
+    this.router.navigateByUrl("/lists/"+quizz.id+"/edit");
   }
 
 }

@@ -29,6 +29,13 @@ public class MemoryCardListMappableDAO extends AbstractMappableDAO<MemoryCardLis
         return new MemoryCardListEntity();
     }
 
+    public MemoryCardListModel create(String name){
+        MemoryCardListEntity memoryCardListEntity=new MemoryCardListEntity();
+        memoryCardListEntity.setName(name);
+        this.getRepository().save(memoryCardListEntity);
+        return this.getMapper().map(memoryCardListEntity);
+    }
+
     public MemoryCardModel createCardInQuizz(long idQuizz){
         MemoryCardListEntity memoryCardListEntity=this.getRepository().findById(idQuizz).orElse(null);
         if(memoryCardListEntity!=null){
