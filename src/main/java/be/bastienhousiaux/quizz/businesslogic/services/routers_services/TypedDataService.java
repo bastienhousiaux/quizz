@@ -25,4 +25,8 @@ public class TypedDataService extends AbstractTypedDataMappableService<DataChunk
     public void changeTypedDataData(long id,String data){
         this.getDao().changeData(id,data);
     }
+
+    public void deleteTypedDataById(long id){
+        this.getDao().deleteById(id);
+    }
 }

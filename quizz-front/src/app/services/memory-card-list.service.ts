@@ -4,6 +4,7 @@ import { MemoryCardListModel } from '../models/MemoryCardListModel';
 import { Observable, BehaviorSubject } from 'rxjs';
 import { environment } from 'src/environments/environment';
 import { MemoryCardModel } from '../models/MemoryCardModel';
+import { DataChunkModel } from '../models/DataChunkModel';
 
 @Injectable({
   providedIn: 'root'
@@ -16,6 +17,7 @@ export class MemoryCardListService {
   constructor(public httpClient:HttpClient) {
     this._listsDecriptors=new BehaviorSubject<MemoryCardListModel[]>([]);
     this.getAllDescriptors();
+    
    }
 
    public get listDescriptors():Observable<MemoryCardListModel[]>{
@@ -61,4 +63,20 @@ export class MemoryCardListService {
       "Content-type":"application/json"
     }});
   }
+
+  addDataToRecto(cardId:number):Observable<DataChunkModel>{
+    return this.httpClient.post<DataChunkModel>(environment.apiUrl+"/memorycards/"+cardId+"/recto/data",{});
+  }
+
+  addDataToVerso(cardId:number):Observable<DataChunkModel>{
+    return this.httpClient.post<DataChunkModel>(environment.apiUrl+"/memorycards/"+cardId+"/verso/data",{});
+  }
+
+  deleteDataFromRecto(cardId:number,dataId:number):Observable<any>{
+   return this.httpClient.delete<void>(environment.apiUrl+'/memorycards/'+cardId+'/datas/recto/'+dataId); 
+  }
+
+  deleteDataFromVerso(cardId:number,dataId:number):Observable<any>{
+    return this.httpClient.delete<void>(environment.apiUrl+'/memorycards/'+cardId+'/datas/verso/'+dataId); 
+   }
 }

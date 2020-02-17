@@ -14,6 +14,11 @@ public class TypedDataController {
     @Autowired
     private TypedDataService typedDataService;
 
+    @DeleteMapping("/{id}")
+    public void deleteDataChunkById(@PathVariable("id") long id){
+        this.typedDataService.deleteTypedDataById(id);
+    }
+
     @PatchMapping("/{id}/type")
     public void changeDataChunkType(@PathVariable("id") long id,@RequestParam("type") String type){
         this.typedDataService.changeTypedDataType(id,type);

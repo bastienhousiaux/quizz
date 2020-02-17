@@ -33,10 +33,18 @@ public class MemoryCardController {
         return this.memoryCardService.create();
     }
 
-    @PostMapping("{id}/{face}/data")
+    @PostMapping("/{id}/{face}/data")
     public DataChunkPresentable addDataToMemoryCard(@PathVariable("id") long id,
                                                     @PathVariable("face") String face){
         return this.memoryCardService.createDataInCard(id,face);
+    }
+
+    @DeleteMapping("/{cardId}/datas/{face}/{dataId}")
+    public void deleteDataFromFace(@PathVariable("cardId") long cardId,
+                                   @PathVariable("face") String face,
+                                   @PathVariable("dataId") long dataId){
+
+        this.memoryCardService.deleteDataFromFace(cardId,face,dataId);
     }
 
     @DeleteMapping("/{id}")

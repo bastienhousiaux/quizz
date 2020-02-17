@@ -36,4 +36,15 @@ public abstract class AbstractMemoryCardMappableService<OutType> extends Abstrac
                 return null;
         }
     }
+
+    public void deleteDataFromFace(long idCard, String face,long idData){
+        switch(face){
+            case "recto":
+                this.getDao().deleteDataOnRecto(idCard,idData);
+                break;
+            case "verso":
+                this.getDao().deleteDataOnVerso(idCard,idData);
+                break;
+        }
+    }
 }

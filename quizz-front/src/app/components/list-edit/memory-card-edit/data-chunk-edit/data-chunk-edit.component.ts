@@ -1,5 +1,6 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { DataChunkModel } from 'src/app/models/DataChunkModel';
+import { MemoryCardListService } from 'src/app/services/memory-card-list.service';
 
 @Component({
   selector: 'app-data-chunk-edit',
@@ -9,7 +10,9 @@ import { DataChunkModel } from 'src/app/models/DataChunkModel';
 export class DataChunkEditComponent implements OnInit {
   @Input() dataChunk:DataChunkModel;
 
-  constructor() { }
+  constructor(
+    private memoryCardService:MemoryCardListService
+  ) { }
 
   ngOnInit(): void {
   }
@@ -17,4 +20,8 @@ export class DataChunkEditComponent implements OnInit {
   onChange(){
     
   }
+
+  
+
+  
 }
