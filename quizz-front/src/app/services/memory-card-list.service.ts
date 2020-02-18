@@ -64,6 +64,10 @@ export class MemoryCardListService {
     }});
   }
 
+  deleteCard(cardId:number):Observable<any>{
+    return this.httpClient.delete<void>(environment.apiUrl+"/memorycards/"+cardId);
+  }
+
   addDataToRecto(cardId:number):Observable<DataChunkModel>{
     return this.httpClient.post<DataChunkModel>(environment.apiUrl+"/memorycards/"+cardId+"/recto/data",{});
   }
@@ -78,5 +82,13 @@ export class MemoryCardListService {
 
   deleteDataFromVerso(cardId:number,dataId:number):Observable<any>{
     return this.httpClient.delete<void>(environment.apiUrl+'/memorycards/'+cardId+'/datas/verso/'+dataId); 
+   }
+
+   editDataContent(dataId:number,content:String):Observable<any>{
+     return this.httpClient.patch<void>(environment.apiUrl+"/datas/"+dataId+"/data?data="+content,{});
+   }
+   
+   editDataType(dataId:number,type:String):Observable<any>{
+     return this.httpClient.patch<void>(environment.apiUrl+'/datas/'+dataId+'/type?type='+type,{});
    }
 }

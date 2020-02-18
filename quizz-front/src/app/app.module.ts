@@ -10,10 +10,12 @@ import { ListDisplayComponent } from './components/list-display/list-display.com
 import { ListPlayComponent } from './components/list-play/list-play.component';
 import { MemoryCardDisplayComponent } from './components/memory-card-display/memory-card-display.component';
 import {HttpClientModule} from "@angular/common/http";
-import { ReactiveFormsModule } from '@angular/forms';
+import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { ListEditComponent } from './components/list-edit/list-edit.component';
 import { MemoryCardEditComponent } from './components/list-edit/memory-card-edit/memory-card-edit.component';
 import { DataChunkEditComponent } from './components/list-edit/memory-card-edit/data-chunk-edit/data-chunk-edit.component';
+import { CardPlayComponent } from './components/list-play/card-play/card-play.component';
+import { DataChunkPlayComponent } from './components/list-play/card-play/data-chunk-play/data-chunk-play.component';
 
 @NgModule({
   declarations: [
@@ -23,7 +25,9 @@ import { DataChunkEditComponent } from './components/list-edit/memory-card-edit/
     MemoryCardDisplayComponent,
     ListEditComponent,
     MemoryCardEditComponent,
-    DataChunkEditComponent
+    DataChunkEditComponent,
+    CardPlayComponent,
+    DataChunkPlayComponent
   ],
   imports: [
     BrowserModule,
@@ -38,7 +42,8 @@ import { DataChunkEditComponent } from './components/list-edit/memory-card-edit/
     NbButtonModule,
     NbCardModule,
     NbIconModule,
-    NbSelectModule
+    NbSelectModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

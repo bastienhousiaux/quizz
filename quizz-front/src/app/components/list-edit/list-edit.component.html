@@ -1,6 +1,7 @@
 <h1>{{list.name || "liste sans titre"}}</h1>
 <button nbButton (click)="goBack()">retour</button>
 <div *ngFor="let memoryCard of list.cards">
+    <div class="memoryCardDeleteButton"><button nbButton status="danger" (click)="deleteCard(memoryCard.id)"><nb-icon icon="trash"></nb-icon></button></div>
     <app-memory-card-edit [memoryCard]="memoryCard"></app-memory-card-edit>
 </div>
 <div>

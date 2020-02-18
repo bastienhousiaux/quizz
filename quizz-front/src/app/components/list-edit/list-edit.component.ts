@@ -31,4 +31,9 @@ export class ListEditComponent implements OnInit {
     );
   }
 
+  deleteCard(cardId:number){
+    this.memoryCardListService.deleteCard(cardId).subscribe(
+      data=>{this.list.cards.splice(this.list.cards.findIndex(x=>x.id==cardId),1);}
+    )
+  }
 }

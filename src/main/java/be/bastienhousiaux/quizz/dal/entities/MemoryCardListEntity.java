@@ -14,6 +14,7 @@ import java.util.List;
 @AllArgsConstructor
 @Inheritance(strategy = InheritanceType.TABLE_PER_CLASS)
 public class MemoryCardListEntity extends MemoryCardListInfoEntity{
-    @OneToMany(orphanRemoval = true)
+    @OneToMany(orphanRemoval = true,cascade = CascadeType.ALL)
+    @JoinColumn(name="quizz_id")
     private List<MemoryCardEntity> cards=new ArrayList<>();
 }

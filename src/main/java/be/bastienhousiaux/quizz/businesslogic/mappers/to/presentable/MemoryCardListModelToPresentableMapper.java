@@ -9,7 +9,7 @@ import org.springframework.stereotype.Service;
 import java.util.stream.Collectors;
 
 @Service
-public class MemoryCardListModelToPresentatableMapper extends AbstractMemoryCardListModelToMapper<MemoryCardListPresentable> {
+public class MemoryCardListModelToPresentableMapper extends AbstractMemoryCardListModelToMapper<MemoryCardListPresentable> {
     @Autowired
     private MemoryCardModelToPresentableMapper memoryCardMapper;
 

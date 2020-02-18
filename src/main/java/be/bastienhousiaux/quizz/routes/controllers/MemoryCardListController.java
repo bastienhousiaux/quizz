@@ -40,4 +40,9 @@ public class MemoryCardListController {
     public void deleteById(@PathVariable("id") long id){
         this.memoryCardListService.deleteById(id);
     }
+
+//    @DeleteMapping("/{idQuizz}/cards/{idCard}")
+//    public void deleteMemoryCardFromQuizz(@PathVariable("idQuizz") long idQuizz, @PathVariable("idCard") long idCard){
+//        this.memoryCardListService
+//    }
 }

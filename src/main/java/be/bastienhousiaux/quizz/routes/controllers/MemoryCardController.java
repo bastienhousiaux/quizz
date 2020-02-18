@@ -51,4 +51,6 @@ public class MemoryCardController {
     public void deleteById(@PathVariable("id") long id){
         this.memoryCardService.deleteById(id);
     }
+
+//    @DeleteMapping("/{id}")
 }

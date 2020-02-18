@@ -1,0 +1,16 @@
+<nb-flip-card [showToggleButton]="false" [flipped]="flipped" (click)="flipped=!flipped">
+    <nb-card-front>
+      <nb-card>
+        <nb-card-body>
+            <app-data-chunk-play *ngFor="let dataChunk of memoryCard.recto" [dataChunk]="dataChunk"></app-data-chunk-play>
+        </nb-card-body>
+      </nb-card>
+    </nb-card-front>
+    <nb-card-back>
+      <nb-card>
+        <nb-card-body>
+            <app-data-chunk-play *ngFor="let dataChunk of memoryCard.verso" [dataChunk]="dataChunk"></app-data-chunk-play>
+        </nb-card-body>
+      </nb-card>
+    </nb-card-back>
+  </nb-flip-card>

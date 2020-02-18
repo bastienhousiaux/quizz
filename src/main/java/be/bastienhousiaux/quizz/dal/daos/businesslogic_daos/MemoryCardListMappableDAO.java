@@ -46,4 +46,8 @@ public class MemoryCardListMappableDAO extends AbstractMappableDAO<MemoryCardLis
         }
         return null;
     }
+
+//    public void deleteCardFromQuizz(long quizzId,long cardId){
+//
+//    }
 }

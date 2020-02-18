@@ -26,5 +26,8 @@ public class AbstractMemoryCardListMappableService<OutType> extends AbstractMapp
         return memoryCardModelToPresentableMapper.map((getDao()).createCardInQuizz(quizzId));
     }
 
+//    public void deleteCardFromQuizz(long quizzId,long cardId){
+//        this.getDao().
+//    }
 
 }

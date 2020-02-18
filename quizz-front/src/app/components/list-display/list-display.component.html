@@ -3,7 +3,15 @@
         {{quizz.name || "unnamed quizz"}}
     </nb-card-header>
     <nb-card-body>
-        <button nbButton (click)="editQuizz(quizz)"><nb-icon icon="edit"></nb-icon></button>|play|<button nbButton (click)="deleteList(quizz)"><nb-icon icon="trash"></nb-icon></button>
+        <button nbButton (click)="editQuizz(quizz)">
+            <nb-icon icon="edit"></nb-icon>
+        </button>
+        <button nbButton status="success" (click)="playQuizz(quizz)">
+            play
+        </button>
+        <button nbButton status="danger" (click)="deleteList(quizz)">
+            <nb-icon icon="trash"></nb-icon>
+        </button>
     </nb-card-body>
 </nb-card>
 

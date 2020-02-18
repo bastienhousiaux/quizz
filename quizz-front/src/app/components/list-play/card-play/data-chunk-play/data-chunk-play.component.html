@@ -1,0 +1,4 @@
+<div [ngSwitch]="dataChunk.type">
+    <p *ngSwitchCase="'textData'">{{dataChunk.data}}</p>
+    <img *ngSwitchCase="'imageUrlData'" [src]="dataChunk.data"/>
+</div>

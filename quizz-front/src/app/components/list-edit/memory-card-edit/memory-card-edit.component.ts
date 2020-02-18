@@ -32,7 +32,7 @@ export class MemoryCardEditComponent implements OnInit {
     this.memoryCardListService.deleteDataFromRecto(idCard,idChunk).subscribe(
       ()=>{
         let index=this.memoryCard.recto.findIndex(x=>x.id==idChunk);
-        if(index)this.memoryCard.recto.splice(index,1);
+        if(index>=0)this.memoryCard.recto.splice(index,1);
       }
     );
   }

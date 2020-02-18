@@ -5,7 +5,7 @@
         </nb-card-header>
         <nb-card-body>
             <span *ngFor="let dataChunk of memoryCard.recto">
-                <app-data-chunk-edit  [dataChunk]="dataChunk"></app-data-chunk-edit><button nbButton (click)="deleteDataChunkFromRecto(memoryCard.id,dataChunk.id)"><nb-icon icon="trash"></nb-icon></button>
+                <app-data-chunk-edit  [dataChunk]="dataChunk"></app-data-chunk-edit><button nbButton status="danger" (click)="deleteDataChunkFromRecto(memoryCard.id,dataChunk.id)"><nb-icon icon="trash"></nb-icon></button>
             </span>
             <button nbButton fullWidth (click)="addDataToRecto(memoryCard.id)">ajouter</button>
         </nb-card-body>
@@ -16,7 +16,7 @@
         </nb-card-header>
         <nb-card-body>
             <span *ngFor="let dataChunk of memoryCard.verso">
-                <app-data-chunk-edit  [dataChunk]="dataChunk"></app-data-chunk-edit><button nbButton (click)="deleteDataChunkFromVerso(memoryCard.id,dataChunk.id)"><nb-icon icon="trash"></nb-icon></button>
+                <app-data-chunk-edit  [dataChunk]="dataChunk"></app-data-chunk-edit><button nbButton status="danger" (click)="deleteDataChunkFromVerso(memoryCard.id,dataChunk.id)"><nb-icon icon="trash"></nb-icon></button>
             </span>
             <button nbButton fullWidth (click)="addDataToVerso(memoryCard.id)">ajouter</button>
         </nb-card-body>

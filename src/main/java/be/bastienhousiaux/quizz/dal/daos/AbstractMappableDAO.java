@@ -63,6 +63,7 @@ public abstract class AbstractMappableDAO<EntityType,OutType> extends AbstractDA
     public void deleteById(long id){
         System.out.println("HELLO");
         System.out.println(id);
+
         this.repository.deleteById(id);
     }
 }

@@ -39,6 +39,10 @@ export class ListDisplayComponent implements OnInit {
     this.memoryCardListService.deleteList(descriptor);
   }
 
+  playQuizz(quizz:MemoryCardListModel){
+    this.router.navigateByUrl("/lists/"+quizz.id+"/play");
+  }
+
   editQuizz(quizz:MemoryCardListModel){
     this.router.navigateByUrl("/lists/"+quizz.id+"/edit");
   }

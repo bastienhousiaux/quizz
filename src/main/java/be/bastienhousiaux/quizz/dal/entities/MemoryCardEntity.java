@@ -14,11 +14,13 @@ public class MemoryCardEntity{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name="recto")
+    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name="recto")
+    @JoinColumn(name="recto_card_id")
     private List<TypedDataEntity> recto;
-    @OneToMany(cascade = CascadeType.PERSIST)
-    @JoinTable(name="verso")
+    @OneToMany(cascade = CascadeType.ALL)
+//    @JoinTable(name="verso")
+    @JoinColumn(name="verso_card_id")
     private  List<TypedDataEntity> verso;
 
     public MemoryCardEntity() {
